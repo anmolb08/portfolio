@@ -46,8 +46,8 @@ ul{padding-left:20px;margin:8px 0}
 
 .proj-head{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap}
 .hint{font-style:italic;font-family:"Playfair Display",Georgia,serif;font-size:18px}
-.slider{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 26px;margin:0 -6px;-webkit-overflow-scrolling:touch}
-.slide{position:relative;flex:0 0 min(300px,80%);scroll-snap-align:start;min-height:270px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;border:2.5px solid #1c1c1c;border-radius:22px;box-shadow:6px 6px 0 #1c1c1c;color:#1c1c1c;text-decoration:none;background:var(--pink)}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:6px 0 26px}
+.slide{position:relative;min-width:0;min-height:270px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;border:2.5px solid #1c1c1c;border-radius:22px;box-shadow:6px 6px 0 #1c1c1c;color:#1c1c1c;text-decoration:none;background:var(--pink)}
 .slide.c2{background:#f7f0dc}.slide.c3{background:var(--plum);color:#fffaf0}
 .slide .n{position:absolute;top:14px;left:18px;font-family:"Bowlby One",Impact,sans-serif;font-size:32px;opacity:.45}
 .slide h3{font-size:30px;margin-bottom:8px}.slide p{margin:0 0 8px;font-size:15px}.slide b{font-size:14px}
@@ -81,10 +81,10 @@ footer{margin-top:50px;font-size:14px;opacity:.85}
 <div class="chips"><span>B.Tech ECE, MSIT (GGSIPU)</span><span>CGPA 8.94</span><span>Open to internships Jan – Apr 2027</span><span style="background:var(--pink)">🏆 1st place, Street Dance</span></div>
 
 <section id="projects">
-<div class="proj-head"><h2>Projects</h2><div class="arrows"><span class="hint">slide sideways →</span> <button type="button" aria-label="Previous" onclick="slide(-1)">←</button><button type="button" aria-label="Next" onclick="slide(1)">→</button></div></div>
-<div class="slider" id="slider">
-<a class="slide c2" href="#cases"><span class="n">02</span><h3>Case studies</h3><p class="serif">Uniqlo, Duolingo, Sugar, Bewakoof</p><p>Four brands, read closely, with sources.</p><b>Open →</b></a>
-<a class="slide c3" href="#built"><span class="n">03</span><h3>Built</h3><p>Strategy app, CRM pipeline, Unfold.</p><b>Open →</b></a>
+<div class="proj-head"><h2>Projects</h2></div>
+<div class="project-grid">
+<a class="slide c2" href="#cases"><span class="n">01</span><h3>Case studies</h3><p class="serif">Uniqlo, Duolingo, Sugar, Bewakoof</p><p>Four brands, read closely, with sources.</p><b>Open →</b></a>
+<a class="slide c3" href="#built"><span class="n">02</span><h3>Built</h3><p>Strategy app, CRM pipeline, Unfold.</p><b>Open →</b></a>
 </div>
 </section>
 
@@ -199,7 +199,7 @@ Protect the habit loop that the brand is built on.
 </div>
 <div class="border bottom" aria-hidden="true"></div>
 <script>
-function slide(d){var s=document.getElementById('slider');s.scrollBy({left:d*(s.clientWidth*0.8),behavior:'smooth'})}
+
 </script>
 </body>
 </html>
